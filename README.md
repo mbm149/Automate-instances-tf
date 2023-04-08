@@ -1,3 +1,11 @@
 # Automate-network-tf
 
 Automete deployment of custome public and private networks with multiple resorces, enable flow logs with aggreagation, sampling and metadata. Created intances with firewall rules. 
+
+Tasks:
+  1. Create custom network
+  2. Enable flow logs 
+  3. Create firewall rules
+  4. Create an auto mode network
+  5. Deploy configuration
+  6. Verify configuration 
