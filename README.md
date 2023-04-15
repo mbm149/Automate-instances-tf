@@ -9,3 +9,11 @@ Tasks:
   4. Create an auto mode network
   5. Deploy configuration
   6. Verify configuration 
+  
+ #Automate-Storage
+ 
+ Automate creation of a standar storage bucket to storage vm snapshot
+ 
+ Tasks:
+   1. 
+   2.
