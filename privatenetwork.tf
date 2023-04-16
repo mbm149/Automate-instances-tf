@@ -42,3 +42,10 @@ module "tf-instance1-private" {
   instance_name    = "tf-instance1-private"
   instance_subnetwork = google_compute_subnetwork.tf-subnetwork-private.self_link
 }
+
+module "vm-snapshot-locations-us123" {
+  source            = "./storage"
+  storage-uniquename = "vm-snapshot-locations-us123"
+}
+
+
