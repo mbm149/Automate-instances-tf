@@ -24,7 +24,7 @@ resource "google_compute_subnetwork" "tf-subnetwork-private" {
 
 #firewall rule allow ssh, icmp traffic on the network
 resource "google_compute_firewall" "tf-network-private-ssh-icmp-p" {
-  name = "tf-network-ssh-icmp"
+  name = "tf-network-private-ssh-icmp-p"
   #properties
   network = google_compute_network.tf-network-private.self_link
   allow {
