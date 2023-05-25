@@ -38,6 +38,6 @@ def instance_stop(cloudevent):
     snapshot = compute.disks().createSnapshot(project = projectid, zone = zone, disk = disk_name, body = snapshot_body).execute()
     
 
-    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {executionget}")
+    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {projectid}")
+    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {zone}")
     print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {disk_name}")
-     #   print(f"Principal: {payload.get('zone')}")
