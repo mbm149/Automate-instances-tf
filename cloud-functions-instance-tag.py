@@ -16,18 +16,21 @@ def instance_stop(cloudevent):
 
     #restart the stoped intance 
     execution = compute.instances().start(project = projectid, zone = zone, instance = instance_id).execute()
-
-    # Set the tags on the instance
+    
+     # Set the tags on the instance
     executionget = compute.instances().get(project = projectid, zone = zone, instance = instance_id).execute()
     fingerprintUpdate = executionget.get('tags', dict()).get('fingerprint')
-
+    
+    # Need to get the latest fingerprint since it auto generated  
     request_body = {
         'items': ['infected-instance'], 
         'fingerprint' : fingerprintUpdate
     }
 
+    #excute the tagging for the infected instance
     taginstance = compute.instances().setTags(project = projectid, zone = zone, instance = instance_id, body = request_body).execute()
 
-    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {executionget}")
-    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {disk_name}")
-     #   print(f"Principal: {payload.get('zone')}")
+    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {projectid}")
+    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {zone}")
+    print(f"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@: {instance_id}")
+
