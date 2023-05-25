@@ -22,12 +22,14 @@ def instance_stop(cloudevent):
     # Set the tags on the instance
     executionget = compute.instances().get(project = projectid, zone = zone, instance = instance_id).execute()
     fingerprintUpdate = executionget.get('tags', dict()).get('fingerprint')
-
+    
+    # Need to get the latest fingerprint since it auto generated  
     request_body = {
         'items': ['infected-instance'], 
         'fingerprint' : fingerprintUpdate
     }
 
+    #excute the tagging for the infected instance
     taginstance = compute.instances().setTags(project = projectid, zone = zone, instance = instance_id, body = request_body).execute()
 
     # set the snapshot body 
