@@ -4,6 +4,7 @@ import googleapiclient.discovery
 
 # CloudEvent function to be triggered by an Eventarc Cloud Audit Logging trigger
 # Note: this is NOT designed for second-party (Cloud Audit Logs -> Pub/Sub) triggers!
+##
 @functions_framework.cloud_event
 def hello_auditlog(cloudevent):
     # Print out the CloudEvent's (required) `type` property
@@ -24,7 +25,7 @@ def hello_auditlog(cloudevent):
     network_name = network_data.get('networkInterfaces')
     network_interface = network_name[0].get('name')
     
-
+    #access configs  parse
     access_config_name = ''
 
     if network_name[0].get('accessConfigs'):  
